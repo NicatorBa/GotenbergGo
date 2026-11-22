@@ -1,0 +1,12 @@
+op: redact
+name: Redact
+dropSignatures: true
+doc: It removes the content under the regions.
+fields:
+  - name: Regions
+    form: regions
+    type: json
+    goType: "[]RedactRegion"
+    required: true
+    variadic: true
+    example: '[]RedactRegion{{Page: 1, X: 10, Y: 10, Width: 100, Height: 20}}'

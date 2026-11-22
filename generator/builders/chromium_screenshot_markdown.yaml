@@ -1,0 +1,7 @@
+type: ChromiumScreenshotFromMarkdown
+route: /forms/chromium/screenshot/markdown
+entry: Chromium().ScreenshotFromMarkdown
+doc: 'It takes a screenshot of Markdown files with Chromium: the HTML template, added via the Index… methods, calls {{ toHTML "file.md" }} for each Markdown file added via FileFrom….'
+output: file
+files: true
+include: [index, chromium_common, chromium_screenshot]

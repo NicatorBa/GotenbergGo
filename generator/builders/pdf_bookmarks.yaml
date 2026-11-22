@@ -1,0 +1,8 @@
+type: PDFBookmarks
+route: /forms/pdf/bookmarks
+entry: PDF().Bookmarks
+doc: It reads the outline of the PDFs added via FileFrom….
+output: json
+result: map[string][]Bookmark
+files: true
+include: [password]

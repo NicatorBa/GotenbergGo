@@ -1,0 +1,5 @@
+op: timestamp
+name: Timestamp
+doc: It adds a document timestamp from the RFC 3161 authority at the URL.
+fields:
+  - { name: TimestampURL, form: timestampUrl, type: string, required: true, example: https://freetsa.org/tsr }

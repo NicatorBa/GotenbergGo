@@ -1,0 +1,6 @@
+op: delete
+name: Delete
+dropSignatures: true
+doc: It removes the given pages, such as "1-3,5", "odd" or "last".
+fields:
+  - { name: Pages, form: pages, type: string, required: true, example: "1-3" }

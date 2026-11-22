@@ -1,0 +1,6 @@
+op: convert-colors
+name: ConvertColors
+dropSignatures: true
+doc: It converts the colors to the target color space.
+fields:
+  - { name: Target, form: target, type: enum, enum: ColorTarget, required: true }

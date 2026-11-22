@@ -1,0 +1,8 @@
+type: PDFInfo
+route: /forms/pdf/info
+entry: PDF().Info
+doc: It reads general information about the PDFs added via FileFrom….
+output: json
+result: map[string]DocumentInfo
+files: true
+include: [password]

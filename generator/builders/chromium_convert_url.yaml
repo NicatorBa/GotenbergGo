@@ -1,0 +1,14 @@
+type: ChromiumConvertFromURL
+route: /forms/chromium/convert/url
+entry: Chromium().ConvertFromURL
+doc: It converts a URL to PDF with Chromium.
+output: file
+files: true
+stages: true
+include: [chromium_common, paper, chromium_pdf]
+fields:
+  - name: URL
+    form: url
+    type: string
+    required: true
+    example: https://example.com

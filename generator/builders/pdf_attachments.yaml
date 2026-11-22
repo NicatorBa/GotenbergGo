@@ -1,0 +1,8 @@
+type: PDFAttachments
+route: /forms/pdf/attachments
+entry: PDF().Attachments
+doc: It lists the files embedded in the PDFs added via FileFrom….
+output: json
+result: map[string][]Attachment
+files: true
+include: [password]

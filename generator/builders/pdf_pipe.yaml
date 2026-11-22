@@ -1,0 +1,7 @@
+type: PDFPipe
+route: /forms/pdf/pipe
+entry: PDF().Pipe
+doc: It runs the stages, at least one, on the PDFs added via FileFrom…. Files used by a stage are uploaded on the builder too and referenced by filename; they are not processed as input documents.
+output: file
+files: true
+stages: true

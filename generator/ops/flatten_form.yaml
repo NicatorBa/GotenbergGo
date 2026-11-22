@@ -1,0 +1,4 @@
+op: flatten-form
+name: FlattenForm
+dropSignatures: true
+doc: It burns the form fields into the page content.

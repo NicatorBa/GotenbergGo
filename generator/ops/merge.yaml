@@ -1,0 +1,12 @@
+op: merge
+name: Merge
+dropSignatures: true
+doc: >-
+  It merges all documents into one, in the order the files were added: the
+  client prefixes the filename of every input document added via FileFrom…
+  with its zero-padded position, such as 0001_a.pdf, because the server
+  orders the inputs by filename. Files from ArchiveFrom… (named by the archive
+  entries) and FileFromURL (named by the server unless WithDownloadFilename is
+  given) cannot be prefixed and are ordered by filename. Files a stage
+  references by filename keep their names; with a compose stage, the
+  documents its placements name are therefore not ordered by the prefix.

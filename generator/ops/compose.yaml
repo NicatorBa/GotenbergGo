@@ -1,0 +1,14 @@
+op: compose
+name: Compose
+dropSignatures: true
+doc: It draws pages of the current documents on new pages of the paper size, such as for n-up or imposition, and replaces them with that one document. The paper size is set via PaperSize, or PaperWidth and PaperHeight.
+include: [paper]
+fields:
+  - name: Placements
+    form: placements
+    type: json
+    goType: "[]Placement"
+    required: true
+    variadic: true
+    fileRef: true
+    example: '[]Placement{{Source: "a.pdf", SourcePage: 1, Page: 1}}'

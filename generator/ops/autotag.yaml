@@ -1,0 +1,3 @@
+op: autotag
+name: Autotag
+doc: It infers a structure tree for untagged documents.

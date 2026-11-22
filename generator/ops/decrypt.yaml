@@ -1,0 +1,6 @@
+op: decrypt
+name: Decrypt
+dropSignatures: true
+doc: It opens encrypted documents and removes their encryption. As a stage, it must come first.
+fields:
+  - { name: Password, form: password, type: string, example: secret, doc: Sets the password opening the documents. }

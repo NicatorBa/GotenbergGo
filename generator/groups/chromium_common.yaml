@@ -1,0 +1,100 @@
+# Options shared by the Chromium convert and screenshot routes.
+fields:
+  - name: SkipNetworkIdleEvent
+    form: skipNetworkIdleEvent
+    type: bool
+    doc: Sets whether Chromium skips waiting for the network idle event before converting. The server default is true.
+  - name: SkipNetworkAlmostIdleEvent
+    form: skipNetworkAlmostIdleEvent
+    type: bool
+    doc: Sets whether Chromium skips waiting for the network almost-idle event before converting. The server default is true.
+  - name: FailOnHTTPStatusCodes
+    form: failOnHttpStatusCodes
+    type: json
+    goType: "[]int"
+    variadic: true
+    example: "[]int{499, 599}"
+    doc: Sets the HTTP status codes of the main page that make the request fail with a 409. A code ending in 99 stands for its whole class, such as 499 for 400 to 499. The server default is 499 and 599.
+  - name: FailOnResourceHTTPStatusCodes
+    form: failOnResourceHttpStatusCodes
+    type: json
+    goType: "[]int"
+    variadic: true
+    example: "[]int{499, 599}"
+    doc: Sets the HTTP status codes of the page's resources that make the request fail with a 409. A code ending in 99 stands for its whole class.
+  - name: IgnoreResourceHTTPStatusDomains
+    form: ignoreResourceHttpStatusDomains
+    type: json
+    goType: "[]string"
+    variadic: true
+    example: '[]string{"sentry.io"}'
+    doc: Sets the domains whose resources FailOnResourceHTTPStatusCodes ignores.
+  - name: FailOnResourceLoadingFailed
+    form: failOnResourceLoadingFailed
+    type: bool
+    doc: Sets whether the request fails with a 409 when a resource of the page fails to load.
+  - name: FailOnConsoleExceptions
+    form: failOnConsoleExceptions
+    type: bool
+    doc: Sets whether the request fails with a 409 on a JavaScript exception in the page.
+  - name: FailOnConsoleMessageTypes
+    form: failOnConsoleMessageTypes
+    type: json
+    goType: "[]ConsoleMessageType"
+    variadic: true
+    example: "[]ConsoleMessageType{ConsoleMessageTypeError}"
+    doc: Sets the console message types that make the request fail with a 409.
+  - name: WaitDelay
+    form: waitDelay
+    type: duration
+    doc: Sets a fixed delay Chromium waits before converting, once the page is loaded. It must be shorter than the API timeout of the server.
+  - name: WaitForWindowStatus
+    form: waitForWindowStatus
+    type: string
+    doc: Makes Chromium wait until window.status equals the given value before converting.
+  - name: WaitForExpression
+    form: waitForExpression
+    type: string
+    example: "window.ready === true"
+    doc: Makes Chromium wait until the JavaScript expression evaluates to true before converting.
+  - name: WaitForSelector
+    form: waitForSelector
+    type: string
+    example: "#ready"
+    doc: Makes Chromium wait until an element matches the CSS selector before converting.
+  - name: Cookies
+    form: cookies
+    type: json
+    goType: "[]Cookie"
+    variadic: true
+    example: '[]Cookie{{Name: "session", Value: "abc", Domain: "example.com"}}'
+    doc: Sets the cookies Chromium sends when loading the page and its resources.
+  - name: UserAgent
+    form: userAgent
+    type: string
+    doc: Overrides the User-Agent header Chromium sends.
+  - name: ExtraHTTPHeaders
+    form: extraHttpHeaders
+    type: json
+    goType: "map[string]string"
+    example: 'map[string]string{"X-Header": "value"}'
+    doc: >-
+      Sets extra HTTP headers Chromium sends when loading the page and its
+      resources. To send a header only to matching URLs, append the server
+      syntax ";scope=<regex>" to its value, such as
+      "Bearer token;scope=https://api.example.com/.*".
+  - name: EmulatedMediaType
+    form: emulatedMediaType
+    type: enum
+    enum: EmulatedMediaType
+    doc: Sets the CSS media type Chromium emulates.
+  - name: EmulatedMediaFeatures
+    form: emulatedMediaFeatures
+    type: json
+    goType: "map[string]string"
+    example: 'map[string]string{"prefers-color-scheme": "dark"}'
+    doc: Sets the CSS media features Chromium emulates, such as "prefers-color-scheme" set to "dark".
+  - name: OmitBackground
+    form: omitBackground
+    type: bool
+    doc: Hides the default white background, allowing transparency. For a PDF, it requires PrintBackground.

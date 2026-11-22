@@ -1,0 +1,13 @@
+type: ChromiumScreenshotFromURL
+route: /forms/chromium/screenshot/url
+entry: Chromium().ScreenshotFromURL
+doc: It takes a screenshot of a URL with Chromium.
+output: file
+files: true
+include: [chromium_common, chromium_screenshot]
+fields:
+  - name: URL
+    form: url
+    type: string
+    required: true
+    example: https://example.com

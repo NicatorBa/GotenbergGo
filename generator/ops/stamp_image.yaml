@@ -1,0 +1,16 @@
+op: stamp-image
+name: StampImage
+doc: It draws the uploaded PNG or JPEG image over the pages. The image file is uploaded separately via FileFrom… and referenced by filename.
+include: [stamp]
+fields:
+  - { name: Image, form: image, type: string, required: true, fileRef: true, example: logo.png }
+  - name: Width
+    form: width
+    type: float
+    example: "100"
+    doc: Sets the width of the image in points.
+  - name: Height
+    form: height
+    type: float
+    example: "50"
+    doc: Sets the height of the image in points.

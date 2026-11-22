@@ -1,0 +1,8 @@
+type: ChromiumConvertFromHTML
+route: /forms/chromium/convert/html
+entry: Chromium().ConvertFromHTML
+doc: It converts an HTML document, added via the Index… methods, to PDF with Chromium. Further files, such as images, stylesheets or fonts, are added via FileFrom….
+output: file
+files: true
+stages: true
+include: [index, chromium_common, paper, chromium_pdf]

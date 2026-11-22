@@ -1,0 +1,5 @@
+op: extract-attachments
+name: ExtractAttachments
+doc: It outputs the files embedded in each document. As a stage, it must come last.
+fields:
+  - { name: Name, form: name, type: string, example: data.xml, doc: Extracts only the embedded file of that name. }

@@ -1,0 +1,14 @@
+type: PDFForm
+route: /forms/pdf/form
+entry: PDF().Form
+doc: It lists the form fields of the PDFs added via FileFrom….
+output: json
+result: map[string][]FormField
+files: true
+include: [password]
+fields:
+  - name: Pages
+    form: pages
+    type: string
+    example: 1-3
+    doc: Keeps the fields with a widget on the selected pages, such as "1-3,5", "odd" or "last".

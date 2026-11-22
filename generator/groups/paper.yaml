@@ -1,0 +1,17 @@
+# Paper size options shared by the Chromium convert and LibreOffice routes
+# and the compose operation.
+fields:
+  - name: PaperSize
+    form: paperSize
+    type: enum
+    enum: PaperSize
+    doc: Sets the paper width and height to a named paper size; PaperWidth and PaperHeight then override one side at a time.
+  - name: PaperWidth
+    form: paperWidth
+    type: length
+    doc: 'Sets the paper width: a number of inches, or a length with a unit (pt, px, in, mm, cm, pc), such as "210mm".'
+  - name: PaperHeight
+    form: paperHeight
+    type: length
+    example: 11in
+    doc: 'Sets the paper height: a number of inches, or a length with a unit (pt, px, in, mm, cm, pc), such as "297mm".'

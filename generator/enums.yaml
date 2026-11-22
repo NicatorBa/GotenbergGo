@@ -1,0 +1,189 @@
+- name: PaperSize
+  doc: Is a named paper size, setting both the paper width and height.
+  values:
+    - { const: PaperSizeA0, value: A0 }
+    - { const: PaperSizeA1, value: A1 }
+    - { const: PaperSizeA2, value: A2 }
+    - { const: PaperSizeA3, value: A3 }
+    - { const: PaperSizeA4, value: A4 }
+    - { const: PaperSizeA5, value: A5 }
+    - { const: PaperSizeB4, value: B4 }
+    - { const: PaperSizeB5, value: B5 }
+    - { const: PaperSizeLetter, value: Letter }
+    - { const: PaperSizeLegal, value: Legal }
+    - { const: PaperSizeTabloid, value: Tabloid }
+
+- name: ConsoleMessageType
+  doc: Is a type of browser console message.
+  values:
+    - { const: ConsoleMessageTypeLog, value: log }
+    - { const: ConsoleMessageTypeDebug, value: debug }
+    - { const: ConsoleMessageTypeInfo, value: info }
+    - { const: ConsoleMessageTypeWarning, value: warning }
+    - { const: ConsoleMessageTypeError, value: error }
+    - { const: ConsoleMessageTypeAssert, value: assert }
+
+- name: CookieSameSite
+  doc: Is the SameSite attribute of a Cookie.
+  values:
+    - { const: CookieSameSiteStrict, value: Strict }
+    - { const: CookieSameSiteLax, value: Lax }
+    - { const: CookieSameSiteNone, value: None }
+
+- name: EmulatedMediaType
+  doc: Is the CSS media type Chromium emulates.
+  values:
+    - { const: EmulatedMediaTypeScreen, value: screen }
+    - { const: EmulatedMediaTypePrint, value: print }
+
+- name: ScreenshotFormat
+  doc: Is the image format of a screenshot.
+  values:
+    - { const: ScreenshotFormatPNG, value: png }
+    - { const: ScreenshotFormatJPEG, value: jpeg }
+    - { const: ScreenshotFormatWebP, value: webp }
+
+- name: NativePDFA
+  doc: Is a PDF/A profile LibreOffice produces natively.
+  values:
+    - { const: NativePDFA1b, value: PDF/A-1b }
+    - { const: NativePDFA2b, value: PDF/A-2b }
+    - { const: NativePDFA3b, value: PDF/A-3b }
+    - { const: NativePDFA4, value: PDF/A-4 }
+
+- name: NativePDFUA
+  doc: Is a PDF/UA profile LibreOffice produces natively; for PDF/UA-2, use a remediate stage.
+  values:
+    - { const: NativePDFUA1, value: PDF/UA-1 }
+
+- name: InitialView
+  doc: Is the panel a PDF viewer shows when opening the document.
+  values:
+    - { const: InitialViewDefault, value: default }
+    - { const: InitialViewOutline, value: outline }
+    - { const: InitialViewThumbnails, value: thumbnails }
+
+- name: Magnification
+  doc: Is the zoom a PDF viewer opens the document with.
+  values:
+    - { const: MagnificationDefault, value: default }
+    - { const: MagnificationFitWindow, value: fitWindow }
+    - { const: MagnificationFitWidth, value: fitWidth }
+    - { const: MagnificationFitVisible, value: fitVisible }
+    - { const: MagnificationZoom, value: zoom }
+
+- name: PageLayout
+  doc: Is the page layout a PDF viewer opens the document with.
+  values:
+    - { const: PageLayoutDefault, value: default }
+    - { const: PageLayoutSinglePage, value: singlePage }
+    - { const: PageLayoutOneColumn, value: oneColumn }
+    - { const: PageLayoutTwoColumnRight, value: twoColumnRight }
+
+- name: NativeMaxImageResolution
+  doc: Is the maximum image resolution, in DPI, LibreOffice reduces images to.
+  base: int
+  values:
+    - { const: NativeMaxImageResolution75, value: 75 }
+    - { const: NativeMaxImageResolution150, value: 150 }
+    - { const: NativeMaxImageResolution300, value: 300 }
+    - { const: NativeMaxImageResolution600, value: 600 }
+    - { const: NativeMaxImageResolution1200, value: 1200 }
+
+- name: StampPosition
+  doc: Is the anchor of a stamp on the page. X and Y are then offsets from it.
+  values:
+    - { const: StampPositionCenter, value: center }
+    - { const: StampPositionTopLeft, value: top-left }
+    - { const: StampPositionTop, value: top }
+    - { const: StampPositionTopRight, value: top-right }
+    - { const: StampPositionLeft, value: left }
+    - { const: StampPositionRight, value: right }
+    - { const: StampPositionBottomLeft, value: bottom-left }
+    - { const: StampPositionBottom, value: bottom }
+    - { const: StampPositionBottomRight, value: bottom-right }
+
+- name: StampFont
+  doc: Is one of the 14 standard PDF fonts.
+  values:
+    - { const: StampFontHelvetica, value: Helvetica }
+    - { const: StampFontHelveticaBold, value: Helvetica-Bold }
+    - { const: StampFontHelveticaOblique, value: Helvetica-Oblique }
+    - { const: StampFontHelveticaBoldOblique, value: Helvetica-BoldOblique }
+    - { const: StampFontTimesRoman, value: Times-Roman }
+    - { const: StampFontTimesBold, value: Times-Bold }
+    - { const: StampFontTimesItalic, value: Times-Italic }
+    - { const: StampFontTimesBoldItalic, value: Times-BoldItalic }
+    - { const: StampFontCourier, value: Courier }
+    - { const: StampFontCourierBold, value: Courier-Bold }
+    - { const: StampFontCourierOblique, value: Courier-Oblique }
+    - { const: StampFontCourierBoldOblique, value: Courier-BoldOblique }
+    - { const: StampFontSymbol, value: Symbol }
+    - { const: StampFontZapfDingbats, value: ZapfDingbats }
+
+- name: ColorTarget
+  doc: Is the color space the convert-colors operation converts to.
+  values:
+    - { const: ColorTargetCMYK, value: cmyk }
+    - { const: ColorTargetRGB, value: rgb }
+    - { const: ColorTargetGray, value: gray }
+    - { const: ColorTargetOutputIntent, value: output-intent, doc: is the document's own output intent. }
+
+- name: AttachmentRelationship
+  doc: Is the PDF/A-3 relationship of an attached file to the document.
+  values:
+    - { const: AttachmentRelationshipSource, value: Source }
+    - { const: AttachmentRelationshipData, value: Data }
+    - { const: AttachmentRelationshipAlternative, value: Alternative }
+    - { const: AttachmentRelationshipSupplement, value: Supplement }
+    - { const: AttachmentRelationshipUnspecified, value: Unspecified }
+
+- name: EncryptionAlgorithm
+  doc: Is the algorithm the encrypt operation uses.
+  values:
+    - { const: EncryptionAlgorithmAES256, value: aes256 }
+    - { const: EncryptionAlgorithmAES128, value: aes128 }
+    - { const: EncryptionAlgorithmRC4128, value: rc4-128 }
+    - { const: EncryptionAlgorithmRC440, value: rc4-40 }
+
+- name: Profile
+  doc: Is a conformance profile of the remediate operation and of PDF.Validate.
+  values:
+    - { const: ProfilePDFA1a, value: PDF/A-1a }
+    - { const: ProfilePDFA1b, value: PDF/A-1b }
+    - { const: ProfilePDFA2a, value: PDF/A-2a }
+    - { const: ProfilePDFA2b, value: PDF/A-2b }
+    - { const: ProfilePDFA2u, value: PDF/A-2u }
+    - { const: ProfilePDFA3a, value: PDF/A-3a }
+    - { const: ProfilePDFA3b, value: PDF/A-3b }
+    - { const: ProfilePDFA3u, value: PDF/A-3u }
+    - { const: ProfilePDFA4, value: PDF/A-4 }
+    - { const: ProfilePDFA4e, value: PDF/A-4e }
+    - { const: ProfilePDFA4f, value: PDF/A-4f }
+    - { const: ProfilePDFUA1, value: PDF/UA-1 }
+    - { const: ProfilePDFUA2, value: PDF/UA-2 }
+    - { const: ProfileFacturX, value: Factur-X }
+
+- name: FacturXLevel
+  doc: Is the conformance level of a Factur-X invoice.
+  values:
+    - { const: FacturXLevelMinimum, value: MINIMUM }
+    - { const: FacturXLevelBasicWL, value: BASIC WL }
+    - { const: FacturXLevelBasic, value: BASIC }
+    - { const: FacturXLevelEN16931, value: EN 16931 }
+    - { const: FacturXLevelExtended, value: EXTENDED }
+    - { const: FacturXLevelXRechnung, value: XRECHNUNG }
+
+- name: FacturXDocumentType
+  doc: Is the document type of a Factur-X invoice.
+  values:
+    - { const: FacturXDocumentTypeInvoice, value: INVOICE }
+    - { const: FacturXDocumentTypeOrder, value: ORDER }
+    - { const: FacturXDocumentTypeOrderResponse, value: ORDER_RESPONSE }
+    - { const: FacturXDocumentTypeOrderChange, value: ORDER_CHANGE }
+
+- name: RenderFormat
+  doc: Is the image format of the render operation.
+  values:
+    - { const: RenderFormatPNG, value: png }
+    - { const: RenderFormatJPEG, value: jpeg }

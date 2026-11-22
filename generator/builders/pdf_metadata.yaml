@@ -1,0 +1,8 @@
+type: PDFMetadata
+route: /forms/pdf/metadata
+entry: PDF().Metadata
+doc: It reads the metadata of the PDFs added via FileFrom….
+output: json
+result: map[string]DocumentMetadata
+files: true
+include: [password]

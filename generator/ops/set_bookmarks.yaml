@@ -1,0 +1,11 @@
+op: set-bookmarks
+name: SetBookmarks
+doc: It replaces the outline with the bookmarks.
+fields:
+  - name: Bookmarks
+    form: bookmarks
+    type: json
+    goType: "[]Bookmark"
+    required: true
+    variadic: true
+    example: '[]Bookmark{{Title: "Intro", PageNumber: 1}}'

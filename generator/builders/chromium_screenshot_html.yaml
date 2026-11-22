@@ -1,0 +1,7 @@
+type: ChromiumScreenshotFromHTML
+route: /forms/chromium/screenshot/html
+entry: Chromium().ScreenshotFromHTML
+doc: It takes a screenshot of an HTML document, added via the Index… methods, with Chromium. Further files, such as images, stylesheets or fonts, are added via FileFrom….
+output: file
+files: true
+include: [index, chromium_common, chromium_screenshot]

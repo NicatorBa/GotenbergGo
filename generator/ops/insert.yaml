@@ -1,0 +1,17 @@
+op: insert
+name: Insert
+dropSignatures: true
+doc: It inserts the pages of the uploaded PDF source into each document. The source file is uploaded separately via FileFrom… and referenced by filename.
+fields:
+  - { name: Source, form: source, type: string, required: true, fileRef: true, example: annex.pdf }
+  - name: At
+    form: at
+    type: int
+    min: 0
+    example: "2"
+    doc: Inserts the pages after page at, or before the first page when 0, the default.
+  - name: SourcePages
+    form: sourcePages
+    type: string
+    example: "1-2"
+    doc: Selects the inserted pages of the source, all of them by default.

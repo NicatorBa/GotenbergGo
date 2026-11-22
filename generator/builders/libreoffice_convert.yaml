@@ -1,0 +1,219 @@
+type: LibreOfficeConvert
+route: /forms/libreoffice/convert
+entry: LibreOffice().Convert
+doc: It converts the office documents added via FileFrom… to PDF with LibreOffice. Each document is converted to its own PDF; several are answered as a ZIP unless a merge stage combines them, in the order the files were added. Files used by a stage are not converted.
+output: file
+files: true
+stages: true
+include: [paper]
+fields:
+  - name: Password
+    form: password
+    type: string
+    example: secret
+    doc: Sets the password opening protected source documents.
+  - name: Landscape
+    form: landscape
+    type: bool
+    doc: Sets the paper orientation to landscape.
+  - name: NativePages
+    form: nativePages
+    type: string
+    example: 1-3
+    doc: Sets the page ranges to export, such as "1-5, 8". All pages are exported by default.
+  - name: SinglePage
+    form: singlePage
+    type: bool
+    doc: Exports each sheet of a spreadsheet to one single page.
+  - name: SkipEmptyPages
+    form: skipEmptyPages
+    type: bool
+    doc: Suppresses the export of automatically inserted empty pages.
+  - name: UpdateIndexes
+    form: updateIndexes
+    type: bool
+    doc: Sets whether the indexes, such as the table of contents, are updated before the export. The server default is true.
+  - name: ExportFormFields
+    form: exportFormFields
+    type: bool
+    doc: Sets whether form fields are exported as widgets, or only their fixed print representation. The server default is true.
+  - name: AllowDuplicateFieldNames
+    form: allowDuplicateFieldNames
+    type: bool
+    doc: Allows several form fields to have the same name.
+  - name: NativeBookmarks
+    form: nativeBookmarks
+    type: bool
+    doc: Sets whether bookmarks are exported. The server default is true.
+  - name: ExportBookmarksToPDFDestination
+    form: exportBookmarksToPdfDestination
+    type: bool
+    doc: Exports the bookmarks of Writer documents as named destinations.
+  - name: ExportPlaceholders
+    form: exportPlaceholders
+    type: bool
+    doc: Exports the placeholder fields' visual markings only.
+  - name: ExportNotes
+    form: exportNotes
+    type: bool
+    doc: Exports the notes (comments) as PDF annotations.
+  - name: ExportNotesPages
+    form: exportNotesPages
+    type: bool
+    doc: Exports the notes pages of Impress documents.
+  - name: ExportOnlyNotesPages
+    form: exportOnlyNotesPages
+    type: bool
+    doc: Exports only the notes pages of Impress documents, when ExportNotesPages is set.
+  - name: ExportNotesInMargin
+    form: exportNotesInMargin
+    type: bool
+    doc: Exports the notes in the margin.
+  - name: ConvertOOoTargetToPDFTarget
+    form: convertOooTargetToPdfTarget
+    type: bool
+    doc: Converts the .od[tpgs] targets of links to .pdf.
+  - name: ExportLinksRelativeFsys
+    form: exportLinksRelativeFsys
+    type: bool
+    doc: Exports the file system links as relative links.
+  - name: ExportHiddenSlides
+    form: exportHiddenSlides
+    type: bool
+    doc: Exports the hidden slides of Impress documents.
+  - name: AddOriginalDocumentAsStream
+    form: addOriginalDocumentAsStream
+    type: bool
+    doc: Embeds the source document as a stream in the PDF.
+  - name: NativeTaggedPDF
+    form: nativeTaggedPdf
+    type: bool
+    doc: Generates a tagged (accessible) PDF.
+  - name: NativePDFA
+    form: nativePdfa
+    type: enum
+    enum: NativePDFA
+    doc: Makes LibreOffice produce the PDF/A profile natively. For other profiles, use a remediate stage.
+  - name: NativePDFUA
+    form: nativePdfua
+    type: enum
+    enum: NativePDFUA
+    doc: Makes LibreOffice produce PDF/UA-1 natively; it does not combine with PDF/A-4.
+  - name: InitialView
+    form: initialView
+    type: enum
+    enum: InitialView
+    doc: Sets the panel a PDF viewer shows when opening the document.
+  - name: InitialPage
+    form: initialPage
+    type: int
+    min: 1
+    example: "2"
+    doc: Sets the page a PDF viewer opens the document at.
+  - name: Magnification
+    form: magnification
+    type: enum
+    enum: Magnification
+    doc: Sets the zoom a PDF viewer opens the document with; MagnificationZoom uses Zoom.
+  - name: Zoom
+    form: zoom
+    type: int
+    min: 1
+    example: "150"
+    doc: Sets the zoom factor in percent, with MagnificationZoom.
+  - name: PageLayout
+    form: pageLayout
+    type: enum
+    enum: PageLayout
+    doc: Sets the page layout a PDF viewer opens the document with.
+  - name: OpenBookmarkLevels
+    form: openBookmarkLevels
+    type: int
+    min: -1
+    max: 10
+    example: "2"
+    doc: Sets how many bookmark levels a PDF viewer opens, from 1 to 10, or -1 for all. The server rejects 0.
+  - name: ResizeWindowToInitialPage
+    form: resizeWindowToInitialPage
+    type: bool
+    doc: Makes a PDF viewer resize its window to the initial page.
+  - name: CenterWindow
+    form: centerWindow
+    type: bool
+    doc: Makes a PDF viewer center its window on the screen.
+  - name: OpenInFullScreenMode
+    form: openInFullScreenMode
+    type: bool
+    doc: Makes a PDF viewer open the document in full screen mode.
+  - name: DisplayPDFDocumentTitle
+    form: displayPDFDocumentTitle
+    type: bool
+    doc: Sets whether a PDF viewer shows the document title instead of the filename. The server default is true.
+  - name: HideViewerMenubar
+    form: hideViewerMenubar
+    type: bool
+    doc: Makes a PDF viewer hide its menu bar.
+  - name: HideViewerToolbar
+    form: hideViewerToolbar
+    type: bool
+    doc: Makes a PDF viewer hide its toolbar.
+  - name: HideViewerWindowControls
+    form: hideViewerWindowControls
+    type: bool
+    doc: Makes a PDF viewer hide its window controls.
+  - name: UseTransitionEffects
+    form: useTransitionEffects
+    type: bool
+    doc: Sets whether the slide transition effects of Impress documents are exported. The server default is true.
+  - name: NativeLosslessImageCompression
+    form: nativeLosslessImageCompression
+    type: bool
+    doc: Compresses images losslessly instead of as JPEG.
+  - name: NativeQuality
+    form: nativeQuality
+    type: int
+    min: 1
+    max: 100
+    example: "80"
+    doc: Sets the JPEG quality of the images, from 1 to 100. The server default is 90.
+  - name: NativeReduceImageResolution
+    form: nativeReduceImageResolution
+    type: bool
+    doc: Reduces the resolution of the images to NativeMaxImageResolution.
+  - name: NativeMaxImageResolution
+    form: nativeMaxImageResolution
+    type: enum
+    enum: NativeMaxImageResolution
+    example: NativeMaxImageResolution150
+    doc: Sets the resolution images are reduced to, with NativeReduceImageResolution. The server default is 300.
+  - name: NativeWatermarkText
+    form: nativeWatermarkText
+    type: string
+    example: DRAFT
+    doc: Draws the text as a watermark on every page. It does not combine with NativeTiledWatermarkText.
+  - name: NativeTiledWatermarkText
+    form: nativeTiledWatermarkText
+    type: string
+    example: DRAFT
+    doc: Draws the text as a tiled watermark on every page. It does not combine with NativeWatermarkText.
+  - name: NativeWatermarkColor
+    form: nativeWatermarkColor
+    type: string
+    example: "#FF0000"
+    doc: Sets the watermark color, as "#rrggbb". The server default is #7FFF7F.
+  - name: NativeWatermarkFontSize
+    form: nativeWatermarkFontSize
+    type: int
+    min: 0
+    example: "48"
+    doc: Sets the watermark font size; 0, the server default, sizes it automatically.
+  - name: NativeWatermarkRotation
+    form: nativeWatermarkRotation
+    type: float
+    example: "45"
+    doc: Sets the watermark rotation in degrees.
+  - name: NativeWatermarkFont
+    form: nativeWatermarkFont
+    type: string
+    example: Arial
+    doc: Sets the watermark font name. The server default is Helvetica.

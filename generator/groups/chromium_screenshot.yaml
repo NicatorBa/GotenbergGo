@@ -1,0 +1,42 @@
+# Options of the Chromium screenshot routes.
+fields:
+  - name: Width
+    form: width
+    type: int
+    example: "1280"
+    doc: Sets the viewport width in pixels. The server default is 800.
+  - name: Height
+    form: height
+    type: int
+    example: "720"
+    doc: Sets the viewport height in pixels. The server default is 600.
+  - name: Clip
+    form: clip
+    type: bool
+    doc: Clips the screenshot to the viewport.
+  - name: Selector
+    form: selector
+    type: string
+    example: "#chart"
+    doc: Takes the screenshot of the first element matching the CSS selector instead of the page.
+  - name: Format
+    form: format
+    type: enum
+    enum: ScreenshotFormat
+    doc: Sets the image format. The server default is png.
+  - name: Quality
+    form: quality
+    type: int
+    min: 1
+    max: 100
+    example: "80"
+    doc: Sets the compression quality from 1 to 100, for jpeg and webp. The server default is 100.
+  - name: OptimizeForSpeed
+    form: optimizeForSpeed
+    type: bool
+    doc: Optimizes image encoding for speed rather than size.
+  - name: DeviceScaleFactor
+    form: deviceScaleFactor
+    type: float
+    example: "2"
+    doc: Sets the device scale factor. The server default is 1.

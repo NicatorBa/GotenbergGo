@@ -1,0 +1,8 @@
+type: ChromiumConvertFromMarkdown
+route: /forms/chromium/convert/markdown
+entry: Chromium().ConvertFromMarkdown
+doc: 'It converts Markdown files to PDF with Chromium: the HTML template, added via the Index… methods, calls {{ toHTML "file.md" }} for each Markdown file added via FileFrom….'
+output: file
+files: true
+stages: true
+include: [index, chromium_common, paper, chromium_pdf]

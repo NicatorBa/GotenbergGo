@@ -1,0 +1,20 @@
+op: attach
+name: Attach
+doc: It embeds the uploaded file in each document. The file is uploaded separately via FileFrom… and referenced by filename.
+fields:
+  - { name: File, form: file, type: string, required: true, fileRef: true, example: data.xml }
+  - name: Name
+    form: name
+    type: string
+    example: invoice.xml
+    doc: Sets the name of the embedded file, its filename by default.
+  - name: MIMEType
+    form: mimeType
+    type: string
+    example: text/xml
+    doc: Sets the MIME type of the embedded file.
+  - name: Relationship
+    form: relationship
+    type: enum
+    enum: AttachmentRelationship
+    doc: Makes the embedded file a PDF/A-3 associated file with the relationship.

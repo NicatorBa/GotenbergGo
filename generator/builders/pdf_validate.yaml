@@ -1,0 +1,13 @@
+type: PDFValidate
+route: /forms/pdf/validate
+entry: PDF().Validate
+doc: It validates the PDFs added via FileFrom… against a profile, or a PDF/A–PDF/UA pair of profiles.
+output: json
+result: map[string]ValidationReport
+files: true
+include: [password]
+fields:
+  - name: Profile
+    form: profile
+    type: profileSet
+    required: true

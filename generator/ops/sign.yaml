@@ -1,0 +1,22 @@
+op: sign
+name: Sign
+doc: It signs the documents with the uploaded certificate, a PKCS#12 file, or a PEM certificate with Key. The files are uploaded separately via FileFrom… and referenced by filename.
+fields:
+  - { name: Certificate, form: certificate, type: string, required: true, fileRef: true, example: cert.p12 }
+  - name: Key
+    form: key
+    type: string
+    fileRef: true
+    example: key.pem
+    doc: Names the uploaded PEM private key of a PEM certificate.
+  - { name: CertificatePassword, form: certificatePassword, type: string, example: secret, doc: Sets the password opening the PKCS#12 file. }
+  - { name: Reason, form: reason, type: string, doc: Sets the reason of the signature. }
+  - { name: Location, form: location, type: string, doc: Sets the location of the signature. }
+  - { name: ContactInfo, form: contactInfo, type: string, doc: Sets the contact information of the signer. }
+  - { name: Name, form: name, type: string, doc: Sets the name of the signer. }
+  - { name: PAdES, form: pades, type: bool, doc: Makes the signature a PAdES signature. }
+  - name: TimestampURL
+    form: timestampUrl
+    type: string
+    example: https://freetsa.org/tsr
+    doc: Embeds a timestamp from the RFC 3161 authority at the URL.

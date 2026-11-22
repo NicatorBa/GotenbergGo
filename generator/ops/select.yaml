@@ -1,0 +1,6 @@
+op: select
+name: Select
+dropSignatures: true
+doc: It keeps the given pages, in the given order, such as "1-3,5", "odd" or "last".
+fields:
+  - { name: Pages, form: pages, type: string, required: true, example: "1-3" }

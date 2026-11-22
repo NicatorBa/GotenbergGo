@@ -1,0 +1,41 @@
+op: remediate
+name: Remediate
+dropSignatures: true
+doc: >-
+  It repairs the documents to a conformance profile: a PDF/A or PDF/UA one,
+  or Factur-X, which embeds the invoice XML into a PDF/A-3 document. A PDF/A
+  profile, or Factur-X, is paired with a PDF/UA profile via PairedWith. The
+  server sets the Gotenberg-Remediation-Residual and
+  Gotenberg-Remediation-Rolled-Back response headers.
+fields:
+  - { name: Profile, form: profile, type: profileSet, required: true }
+  - name: Language
+    form: language
+    type: string
+    example: en-US
+    doc: Sets the document language, such as "en-US".
+  - name: Aggressive
+    form: aggressive
+    type: bool
+    doc: Allows the fixes that may change how pages look.
+  - name: FigureAltText
+    form: figureAltText
+    type: string
+    example: Figure
+    doc: Sets the alternate text of the figures that lack one.
+  - name: XML
+    form: xml
+    type: string
+    fileRef: true
+    example: invoice.xml
+    doc: Names the uploaded Factur-X invoice XML to embed, with ProfileFacturX. The file is uploaded separately via FileFrom… and referenced by filename.
+  - name: Level
+    form: level
+    type: enum
+    enum: FacturXLevel
+    doc: Sets the Factur-X conformance level of the XML.
+  - name: DocumentType
+    form: documentType
+    type: enum
+    enum: FacturXDocumentType
+    doc: Sets the Factur-X document type of the XML.

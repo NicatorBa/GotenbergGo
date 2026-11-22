@@ -1,0 +1,10 @@
+op: set-form
+name: SetForm
+doc: It fills the form fields, keyed by their fully qualified name. A value is a string, or a []string for a list that selects several; a check box takes its state name, such as "Yes" or "Off".
+fields:
+  - name: Fields
+    form: fields
+    type: json
+    goType: "map[string]any"
+    required: true
+    example: 'map[string]any{"name": "Jane", "options": []string{"a", "b"}}'

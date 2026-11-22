@@ -1,0 +1,5 @@
+op: detach
+name: Detach
+doc: It removes the embedded file name from each document.
+fields:
+  - { name: Name, form: name, type: string, required: true, example: data.xml }

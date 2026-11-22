@@ -1,0 +1,19 @@
+op: stamp-pdf
+name: StampPDF
+doc: It draws a page of the uploaded PDF source over the pages. The source file is uploaded separately via FileFrom… and referenced by filename.
+include: [stamp]
+fields:
+  - { name: Source, form: source, type: string, required: true, fileRef: true, example: letterhead.pdf }
+  - name: SourcePage
+    form: sourcePage
+    type: int
+    min: 0
+    example: "2"
+    doc: Sets the page of the source to draw, the first one by default.
+  - name: Scale
+    form: scale
+    type: float
+    min: 0
+    minExclusive: true
+    example: "0.5"
+    doc: Scales the drawn page.

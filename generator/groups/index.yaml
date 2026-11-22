@@ -1,0 +1,6 @@
+# The index.html of the Chromium HTML and Markdown routes.
+fields:
+  - name: Index
+    type: fileContent
+    file: index.html
+    doc: It is the main HTML document the route requires; a missing index is reported by the server.

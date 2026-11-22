@@ -1,0 +1,20 @@
+op: set-metadata
+name: SetMetadata
+doc: It writes the document information; options not set are left out.
+fields:
+  - { name: Title, form: title, type: string, doc: Sets the title. }
+  - { name: Author, form: author, type: string, doc: Sets the author. }
+  - { name: Subject, form: subject, type: string, doc: Sets the subject. }
+  - { name: Keywords, form: keywords, type: string, doc: Sets the keywords. }
+  - { name: Creator, form: creator, type: string, doc: Sets the creating application. }
+  - { name: Producer, form: producer, type: string, doc: Sets the producing application. }
+  - name: CreationDate
+    form: creationDate
+    type: string
+    example: "D:20240102150405Z"
+    doc: Sets the creation date, a PDF date string such as "D:20240102150405Z".
+  - name: ModDate
+    form: modDate
+    type: string
+    example: "D:20240102150405Z"
+    doc: Sets the modification date, a PDF date string such as "D:20240102150405Z".

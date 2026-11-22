@@ -1,0 +1,23 @@
+op: stamp-text
+name: StampText
+doc: It draws a line of text over the pages.
+include: [stamp]
+fields:
+  - { name: Text, form: text, type: string, required: true, example: DRAFT }
+  - name: FontSize
+    form: fontSize
+    type: float
+    min: 0
+    minExclusive: true
+    example: "24"
+    doc: Sets the font size in points.
+  - name: Font
+    form: font
+    type: enum
+    enum: StampFont
+    doc: Sets the font, one of the 14 standard PDF fonts.
+  - name: Color
+    form: color
+    type: string
+    example: "#FF0000"
+    doc: Sets the text color, as "#rrggbb".

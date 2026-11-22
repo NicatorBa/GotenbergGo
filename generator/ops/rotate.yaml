@@ -1,0 +1,10 @@
+op: rotate
+name: Rotate
+doc: It sets the rotation of the pages to angle, a multiple of 90 degrees.
+fields:
+  - { name: Angle, form: angle, type: int, required: true, example: "90" }
+  - name: Pages
+    form: pages
+    type: string
+    example: "1-3"
+    doc: Selects the rotated pages, such as "1-3,5", "odd" or "last"; all pages by default.

@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.27"
+      - name: gofmt
+        run: test -z "$(gofmt -l .)" || (gofmt -l . && exit 1)
+      - name: go vet
+        run: |
+          go vet ./...
+          (cd generator && go vet ./...)
+          (cd integration && go vet -tags integration ./...)
+      - name: staticcheck
+        run: |
+          go run honnef.co/go/tools/cmd/staticcheck@v0.8.2 ./...
+          (cd generator && go run honnef.co/go/tools/cmd/staticcheck@v0.8.2 ./...)
+      - name: generated files are up to date
+        run: |
+          go generate ./...
+          git diff --exit-code
+
+  unit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: ["1.26", "1.27"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+      - run: go test -race ./...
+
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.27"
+      - working-directory: integration
+        run: go test -tags integration -count=1 ./...

@@ -1,0 +1,4 @@
+op: flatten-transparency
+name: FlattenTransparency
+dropSignatures: true
+doc: It replaces transparent content with opaque content.

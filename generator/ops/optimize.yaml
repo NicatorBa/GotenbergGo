@@ -1,0 +1,9 @@
+op: optimize
+name: Optimize
+dropSignatures: true
+doc: It shrinks the documents losslessly. Every optimization is enabled by default.
+fields:
+  - { name: ObjectStreams, form: objectStreams, type: bool, doc: Sets whether objects are packed into object streams. }
+  - { name: Dedup, form: dedup, type: bool, doc: Sets whether duplicate objects are merged. }
+  - { name: RecompressImages, form: recompressImages, type: bool, doc: Sets whether images are recompressed losslessly. }
+  - { name: SubsetFonts, form: subsetFonts, type: bool, doc: Sets whether embedded fonts are reduced to the glyphs in use. }

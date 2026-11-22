@@ -1,0 +1,18 @@
+op: encrypt
+name: Encrypt
+dropSignatures: true
+doc: It protects the documents with passwords. At least one of UserPassword and OwnerPassword is required, which the server checks.
+fields:
+  - { name: UserPassword, form: userPassword, type: string, example: secret, doc: Sets the password required to open the document. }
+  - { name: OwnerPassword, form: ownerPassword, type: string, example: owner, doc: Sets the password granting full access to the document. }
+  - name: Algorithm
+    form: algorithm
+    type: enum
+    enum: EncryptionAlgorithm
+    doc: Sets the encryption algorithm. The server default is aes256.
+  - name: Permissions
+    form: permissions
+    type: json
+    goType: Permissions
+    example: 'Permissions{Print: true}'
+    doc: Sets what the encrypted document allows; every permission left false is denied. Without it, everything is allowed.

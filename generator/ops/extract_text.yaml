@@ -1,0 +1,12 @@
+op: extract-text
+name: ExtractText
+doc: It outputs the text of each document as a .txt file, its pages separated by a form feed. As a stage, it must come last.
+fields:
+  - name: Pages
+    form: pages
+    type: string
+    example: "1-3"
+    doc: Selects the read pages, such as "1-3,5", "odd" or "last"; all pages by default.
+  - { name: Invisible, form: invisible, type: bool, doc: Adds the invisible text a searchable scan carries under its image. }
+  - { name: Artifacts, form: artifacts, type: bool, doc: "Adds the headers, footers and page numbers marked as artifacts." }
+  - { name: Annotations, form: annotations, type: bool, doc: Adds the text the annotations show. }

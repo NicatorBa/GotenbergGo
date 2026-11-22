@@ -1,0 +1,64 @@
+# PDF options of the Chromium convert routes.
+fields:
+  - name: MarginTop
+    form: marginTop
+    type: length
+    example: 1cm
+    doc: Sets the top margin, a length such as "1cm". The server default is 0.39in.
+  - name: MarginBottom
+    form: marginBottom
+    type: length
+    example: 1cm
+    doc: Sets the bottom margin, a length such as "1cm". The server default is 0.39in.
+  - name: MarginLeft
+    form: marginLeft
+    type: length
+    example: 1cm
+    doc: Sets the left margin, a length such as "1cm". The server default is 0.39in.
+  - name: MarginRight
+    form: marginRight
+    type: length
+    example: 1cm
+    doc: Sets the right margin, a length such as "1cm". The server default is 0.39in.
+  - name: Landscape
+    form: landscape
+    type: bool
+    doc: Sets the paper orientation to landscape.
+  - name: PrintBackground
+    form: printBackground
+    type: bool
+    doc: Prints the background graphics.
+  - name: Scale
+    form: scale
+    type: float
+    example: "1.5"
+    doc: Sets the scale of the page rendering. The server accepts 0.1 to 2 and defaults to 1.
+  - name: SinglePage
+    form: singlePage
+    type: bool
+    doc: Prints the entire content on one single page.
+  - name: NativePages
+    form: nativePages
+    type: string
+    example: "1-5, 8"
+    doc: Sets the page ranges to print, such as "1-5, 8, 11-13". All pages are printed by default.
+  - name: PreferCSSPageSize
+    form: preferCssPageSize
+    type: bool
+    doc: Makes a page size defined by CSS take precedence over the paper size options.
+  - name: NativeBookmarks
+    form: nativeBookmarks
+    type: bool
+    doc: Generates the document outline from the headings.
+  - name: NativeTaggedPDF
+    form: nativeTaggedPdf
+    type: bool
+    doc: Generates a tagged (accessible) PDF.
+  - name: Header
+    type: fileContent
+    file: header.html
+    doc: It is the HTML template of the page header.
+  - name: Footer
+    type: fileContent
+    file: footer.html
+    doc: It is the HTML template of the page footer.
